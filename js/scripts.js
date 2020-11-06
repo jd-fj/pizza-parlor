@@ -4,16 +4,16 @@ function Pizza(size, toppings) {
 }
 
 Pizza.prototype.sizePrice = function() {
-  if (this.size = "sm") {
+  if (this.size === "sm") {
   return 5;
-  } if (this.size = "med") {
+  } if (this.size === "med") {
     return 10;
-  } if (this.size = "lrg") {
+  } if (this.size === "lrg") {
     return 15;
   }
 }
 
-let pizza1 = new Pizza("sm", ["olives", "anchos", "pickles"])
+let pizza1 = new Pizza("med", ["olives", "anchos", "pickles"])
 
 
 // | Create pizza objects with constructor |||
