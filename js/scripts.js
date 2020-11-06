@@ -1,4 +1,4 @@
-// Business Logic for Order
+// Business Logic ---------
 function Order() {
   this.pizzas = [],
   this.totalPrice = 0
@@ -19,47 +19,22 @@ Order.prototype.calculatePrice = function() {
     return this.totalPrice += this.pizzas[0].toppings.length
 }
 
-
-// Business Logic for Pizza
 function Pizza(size, toppings) {
   this.size = size,
   this.toppings = toppings
-  // this.currentPrice = 0
 }
 
-// Pizza.prototype.sizePrice = function() {
-//   if (this.size === "sm") {
-//   this.currentPrice += 5;
-//   } else if (this.size === "med") {
-//     this.currentPrice += 10;
-//   } else if (this.size === "lrg") {
-//     this.currentPrice += 15;
-//   } else {
-//     return alert("please select a size")
-//   }
-// }
-
-// Pizza.prototype.toppingPrice = function() {
-//   this.toppings = this.toppings.length;
-//   this.currentPrice += this.toppings.length;
-// }
-
-// User Interface Logic -------------------------
+// User Interface Logic ---------
 let order1 = new Order();
 
 $(document).ready(function() {
   $("form#formOne").submit(function(e) {
     e.preventDefault();
     let inputSize = $("#size").val();
-    let inputToppings = $("input:checkbox[name=topping]:checked").map(function() {
-      return this.value;
-    }).get()
+    let inputToppings = $("input:checkbox[name=topping]:checked").map(function() {return this.value;}).get();
 
     let newPizza = new Pizza (inputSize, inputToppings);
-
     order1.addPizza(newPizza);
-
-    console.log(order1.pizzas)
     $("#finalTotal").html("$" + order1.calculatePrice())
   });
 });
