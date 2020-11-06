@@ -40,15 +40,18 @@ $(document).ready(function() {
   $("form#formOne").submit(function(e) {
     e.preventDefault();
     let inputSize = $("#size").val();
-    let inputToppings = $("input:checkbox[name=topping]:checked").val();
-    let newPizza = new Pizza (inputSize, inputToppings);
-    console.log(newPizza.toppings);
-    order1.addPizza(newPizza);
+    let inputToppings = $("input:checkbox[name=topping]:checked").map(function() {
+      return $(this).val();
+    });
     
+    let newPizza = new Pizza (inputSize, inputToppings);
+
+    order1.addPizza(newPizza);
+
+    console.log(order1.pizzas)
     $("#finalTotal").html(order1.pizzas.totalPrice)
   });
 });
-
 
 // The pizza is the contact, the order is the address book
 // Add pizza to order
@@ -65,6 +68,7 @@ $(document).ready(function() {
 
 // | Build UI |||
 // | create a pizza object on submit button | presses button | pizza object created
+// | add all selected toppings to pizza.toppings array | olives, anchovies, and pickles | pizza.toppings returns ["olives", "anchovies", "pickles"] |
 
 // | Display final cost to user |||
 // | should correctly total the size + amount of toppings | sm and 3 toppings | display 8 |
