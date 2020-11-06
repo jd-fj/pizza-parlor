@@ -39,22 +39,22 @@ Open via Bash/GitBash
 ## Test Specs
 | Test | Input | Output |
 |--------|:------:|:-----:|
-| Create Pizza object constructor with size and toppings properties |||
+| **Create Pizza object constructor with size and toppings properties** |||
 | Should correctly create a new Pizza object | pizza1 | returns Pizza {size, toppings} | 
-| Cost of pizza prototype |||
+| **Cost of pizza prototype** |||
 | Should correctly add different prices for sm, med, and lrg | med | 10 |
 | Should correctly add number of toppings selected | pizza1.toppings | returns 3 |
-| Add new pizza object into new Order object |||
+| **Add new pizza object into new Order object** |||
 | Should correctly create Order object | new Order | Order {pizzas, totalPrice}
 | Should correctly add pizza object into Order object | order1.addPizza(pizza1) | returns Pizza {size, toppings} |
-| Build out UI |||
+| **Build out UI** |||
 | Should correctly create a new pizza object on submit button | click "submit" | Pizza {size, toppings} |
 | Should add all selected toppings to pizza object | pizza.toppings | expect ["olives", "anchovies", "pickles"] |
 | Should add correct dollar amount to sm, med, and lrg pizzas | small selected | expect 5 |
 | Should add 1 dollar per selected topping | olives, anchovies, and pickles selected | expect 3 |
 | Should correctly add price for size to price for number of toppings | med and olives selected | expect $6 |
 | Display final cost to user |||
-| Should correctly total the size + amount of toppings | sm and 3 toppings | display 8 |
+| Should correctly add the size + amount of toppings | sm and 3 toppings | display 8 |
 
 
 ## Known Bugs
