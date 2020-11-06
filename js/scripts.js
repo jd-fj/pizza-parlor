@@ -16,6 +16,10 @@ Pizza.prototype.sizePrice = function() {
   }
 }
 
+Pizza.prototype.toppingPrice = function() {
+  this.currentPrice += this.toppings.length 
+}
+
 let pizza1 = new Pizza("med", ["olives", "anchos", "pickles"])
 let pizza2 = new Pizza("sm", ["olives", "anchos", "pickles"])
 let pizza3 = new Pizza("didn't select size", ["olives", "anchos", "pickles"])
@@ -26,7 +30,9 @@ let pizza3 = new Pizza("didn't select size", ["olives", "anchos", "pickles"])
 
 // | Cost of pizza prototype |||
 // | should correctly add price of sm, med, lrg | med | 10 |
-// | should correctly add number of toppings | 3 | pizza1.cost() returns 3 |
+// | should correctly add $1 per number of toppings | 3 | pizza1.cost() returns 3 |
+
+// | Build UI |||
 
 // | Display final cost to user |||
 // | should correctly total the size + amount of toppings | sm and 3 toppings | display 8 |
