@@ -33,7 +33,7 @@ $(document).ready(function() {
     let inputSize = $("#size").val();
     let inputToppings = $("input:checkbox[name=topping]:checked").map(function() { 
       return this.value;}).get();
-      
+
     let newPizza = new Pizza (inputSize, inputToppings);
     order1.addPizza(newPizza);
     $("#finalTotal").html("$" + order1.calculatePrice())

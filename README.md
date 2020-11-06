@@ -6,7 +6,7 @@
 
 Independent project created for Epicodus utilizing custom Objects and Prototypes. Select different sized pizzas and toppings and see the total price below.
 
-## [Here's my live page!] (gh-pages link)
+## View Online: [Here's my live page](https://taylulz.github.io/pizza-parlor)
 
 ## Setup and installation instructions
 
@@ -59,7 +59,7 @@ Open via Bash/GitBash
 
 ## Known Bugs
 
-_No known bugs at this current time_
+* _No known bugs at this current time_
 
 ## Technologies Used
 
@@ -67,11 +67,17 @@ VS Code
 
 GitBash
 
+GitHub
+
 JavaScript
 
 HTML
 
 Bootstrap
+
+Markdown
+
+Mac OS Mojave 10.14.6
 
 ## Legal
 Copyright (c) 2020 Taylor Delph
