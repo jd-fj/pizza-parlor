@@ -1,17 +1,19 @@
 // Business Logic for Order
 function Order() {
-  this.pizzas = []
+  this.pizzas = [],
+  this.totalPrice = 0
 }
 
 Order.prototype.addPizza = function(pizza) {
-  this.pizzas.push(pizza)
+  this.pizzas.push(pizza);
+  this.totalPrice += pizza.sizePrice() + pizza.toppingPrice();
 }
 
 // Business Logic for Pizza
 function Pizza(size, toppings) {
-  this.size = size;
-  this.toppings = toppings;
-  this.currentPrice = 0;
+  this.size = size,
+  this.toppings = toppings,
+  this.currentPrice = 0
 }
 
 Pizza.prototype.sizePrice = function() {
@@ -27,12 +29,22 @@ Pizza.prototype.sizePrice = function() {
 }
 
 Pizza.prototype.toppingPrice = function() {
-  this.currentPrice += this.toppings.length 
+  this.currentPrice += this.toppings.length;
 }
 
-let pizza1 = new Pizza("med", ["olives", "anchos", "pickles"])
-let pizza2 = new Pizza("sm", ["olives", "anchos", "pickles"])
-let pizza3 = new Pizza("didn't select size", ["olives", "anchos", "pickles"])
+// User Interface Logic -------------------------
+let order1 = new Order();
+
+$(document).ready(function() {
+  $("form#formOne").submit(function(e) {
+    e.preventDefault();
+    let inputSize = $("#size").val();
+    let inputToppings = $("input:checkbox[name=topping]:checked").val;
+    let newPizza = new Pizza (inputSize, inputToppings);
+    order1.addPizza(newPizza);
+  });
+});
+
 
 // The pizza is the contact, the order is the address book
 // Add pizza to order
@@ -43,6 +55,9 @@ let pizza3 = new Pizza("didn't select size", ["olives", "anchos", "pickles"])
 // | Cost of pizza prototype |||
 // | should correctly add price of sm, med, lrg | med | 10 |
 // | should correctly add $1 per number of toppings | 3 | pizza1.cost() returns 3 |
+
+// | Create order Object to pass pizza objects into |||
+// | should correctly add price of sm, med, lrg | med | 10 |
 
 // | Build UI |||
 // | create a pizza object on submit button | presses button | pizza object created
@@ -55,4 +70,4 @@ let pizza3 = new Pizza("didn't select size", ["olives", "anchos", "pickles"])
 
 // Allow the user to choose toppings and size for the pizza they'd like to order.
 // Create a pizza object constructor with properties for toppings and size.
-// Create a prototype method for the cost of a pizza depending on the selections chosen. Use your own formula for this.
+// Create a prototype method for the cost of a pizza depending on the selections chosen. Use your own formula for this
