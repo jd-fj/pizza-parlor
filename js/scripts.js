@@ -9,16 +9,16 @@ Order.prototype.addPizza = function(pizza) {
 }
 
 Order.prototype.calculatePrice = function() {
-  for (i = 0; i<this.pizzas; i++) {
-    if (this.pizzas[i].size === "sm") {
+    if (this.pizzas[0].size === "sm") {
       this.totalPrice += 5;
-    } else if (this.pizzas[i] === "med") {
+    } else if (this.pizzas[0].size === "med") {
       this.totalPrice += 10;
-    } else if (this.pizzas[i] === "lrg") {
+    } else if (this.pizzas[0].size === "lrg") {
       this.totalPrice += 15;
     }
-  }
+    return this.totalPrice += this.pizzas[0].toppings.length
 }
+
 
 // Business Logic for Pizza
 function Pizza(size, toppings) {
@@ -39,10 +39,10 @@ function Pizza(size, toppings) {
 //   }
 // }
 
-Pizza.prototype.toppingPrice = function() {
-  this.toppings = this.toppings.length;
-  this.currentPrice += this.toppings.length;
-}
+// Pizza.prototype.toppingPrice = function() {
+//   this.toppings = this.toppings.length;
+//   this.currentPrice += this.toppings.length;
+// }
 
 // User Interface Logic -------------------------
 let order1 = new Order();
@@ -60,7 +60,7 @@ $(document).ready(function() {
     order1.addPizza(newPizza);
 
     console.log(order1.pizzas)
-    $("#finalTotal").html(order1.pizzas.totalPrice)
+    $("#finalTotal").html("$" + order1.calculatePrice())
   });
 });
 
