@@ -22,17 +22,20 @@ Open via Bash/GitBash
 1. you can put bits of code inside the back ticks `git clone {repo URL}`
 
 ## Test Specs
-| Test | Input | Output |
+<!-- | Test | Input | Output |
 | :----------- | :----------------------| :----------- |
-| Name Input Verification |||
-| should correctly return user name in welcome message | Greg | 'Welcome to the program Greg!' |
-| should correctly return notification if user leaves empty field | | 'Please enter your name!' |
-| Age Input Verification |||
-| should correctly permit users from registering if 16 or over | 17 | Registration completes |
-| should correctly return notification is user leaves empty field | | 'Please enter your age!' |
-| Zip Code Input Verification |||
-| should correctly validate given zip code | 98101 | true |
-| should correctly validate given zip code | 9810 | false |
+| Create pizza objects with constructor |||
+| should correctly create a new Pizza object | pizza1 | Pizza {size, [toppings]} |
+
+| Cost of pizza prototype |||
+| should correctly add number of toppings | 3 | pizza1.cost() returns 3 |
+| should correctly add price of sm, med, lrg | med | 10 |
+
+| Display final cost to user |||
+| should correctly total the size + amount of toppings | sm and 3 toppings | display 8 |
+
+
+<!-- Create a pizza object constructor: let pizza1 = new Pizza ([toppings], size) {[anchovies, olives, artichokes], small} -->
 
 ## Known Bugs
 
