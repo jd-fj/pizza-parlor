@@ -15,6 +15,8 @@ Order.prototype.calculatePrice = function() {
       this.totalPrice += 10;
     } else if (this.pizzas[0].size === "lrg") {
       this.totalPrice += 15;
+    } else if (this.pizzas[0].size === "prty") {
+      this.totalPrice += 20;
     }
     return this.totalPrice += this.pizzas[0].toppings.length
 }
