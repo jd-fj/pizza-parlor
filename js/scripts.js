@@ -1,15 +1,16 @@
 function Pizza(size, toppings) {
   this.size = size;
   this.toppings = toppings;
+  this.currentPrice = 0;
 }
 
 Pizza.prototype.sizePrice = function() {
   if (this.size === "sm") {
-  return 5;
+  this.currentPrice += 5;
   } else if (this.size === "med") {
-    return 10;
+    this.currentPrice += 10;
   } else if (this.size === "lrg") {
-    return 15;
+    this.currentPrice += 15;
   } else {
     return alert("please select a size")
   }
