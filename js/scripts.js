@@ -6,27 +6,38 @@ function Order() {
 
 Order.prototype.addPizza = function(pizza) {
   this.pizzas.push(pizza);
-  this.totalPrice += pizza.sizePrice() + pizza.toppingPrice();
+}
+
+Order.prototype.calculatePrice = function() {
+  for (i = 0; i<this.pizzas; i++) {
+    if (this.pizzas[i].size === "sm") {
+      this.totalPrice += 5;
+    } else if (this.pizzas[i] === "med") {
+      this.totalPrice += 10;
+    } else if (this.pizzas[i] === "lrg") {
+      this.totalPrice += 15;
+    }
+  }
 }
 
 // Business Logic for Pizza
 function Pizza(size, toppings) {
   this.size = size,
-  this.toppings = toppings,
-  this.currentPrice = 0
+  this.toppings = toppings
+  // this.currentPrice = 0
 }
 
-Pizza.prototype.sizePrice = function() {
-  if (this.size === "sm") {
-  this.currentPrice += 5;
-  } else if (this.size === "med") {
-    this.currentPrice += 10;
-  } else if (this.size === "lrg") {
-    this.currentPrice += 15;
-  } else {
-    return alert("please select a size")
-  }
-}
+// Pizza.prototype.sizePrice = function() {
+//   if (this.size === "sm") {
+//   this.currentPrice += 5;
+//   } else if (this.size === "med") {
+//     this.currentPrice += 10;
+//   } else if (this.size === "lrg") {
+//     this.currentPrice += 15;
+//   } else {
+//     return alert("please select a size")
+//   }
+// }
 
 Pizza.prototype.toppingPrice = function() {
   this.toppings = this.toppings.length;
@@ -41,9 +52,9 @@ $(document).ready(function() {
     e.preventDefault();
     let inputSize = $("#size").val();
     let inputToppings = $("input:checkbox[name=topping]:checked").map(function() {
-      return $(this).val();
-    });
-    
+      return this.value;
+    }).get()
+
     let newPizza = new Pizza (inputSize, inputToppings);
 
     order1.addPizza(newPizza);
