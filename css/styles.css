@@ -3,16 +3,12 @@ body {
 }
 
 .btn {
-  background: rgba(255, 111, 0, 0.406);
+  background: rgba(255, 68, 0, 0.207);
   border: solid black; 
   border-radius: 10px;
   border-width: 5px;
   padding: 30px;
   margin-top: 30px;
-  background-image: radial-gradient(#fc580060 20%, transparent 20%),
-  radial-gradient(#ff000074 20%, transparent 20%);
-  background-position: 0 0, 60px 60px;
-  background-size: 120px 120px;
 }
 
 #size {

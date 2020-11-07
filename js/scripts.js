@@ -18,7 +18,7 @@ Order.prototype.calculatePrice = function() {
     } else if (this.pizzas[0].size === "prty") {
       this.totalPrice += 20;
     }
-    return this.totalPrice += this.pizzas[0].toppings.length
+    return this.totalPrice += this.pizzas[0].toppings.length;
 }
 
 function Pizza(size, toppings) {
@@ -38,6 +38,6 @@ $(document).ready(function() {
 
     let newPizza = new Pizza (inputSize, inputToppings);
     order1.addPizza(newPizza);
-    $("#finalTotal").html("$" + order1.calculatePrice())
+    $("#finalTotal").html("$" + order1.calculatePrice());
   });
 });
