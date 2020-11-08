@@ -1,7 +1,7 @@
 // Business Logic ---------
 function Order() {
-  this.pizzas = [],
-  this.totalPrice = 0
+  this.pizzas = [];
+  this.totalPrice = 0;
 }
 
 Order.prototype.addPizza = function(pizza) {
@@ -22,8 +22,8 @@ Order.prototype.calculatePrice = function() {
 }
 
 function Pizza(size, toppings) {
-  this.size = size,
-  this.toppings = toppings
+  this.size = size;
+  this.toppings = toppings;
 }
 
 // User Interface Logic ---------
