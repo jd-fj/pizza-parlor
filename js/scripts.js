@@ -38,6 +38,6 @@ $(document).ready(function() {
 
     let newPizza = new Pizza (inputSize, inputToppings);
     order1.addPizza(newPizza);
-    $("#finalTotal").html("$" + order1.calculatePrice());
+    $("#finalTotal").html("$ " + order1.calculatePrice());
   });
 });

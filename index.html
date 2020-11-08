@@ -12,56 +12,62 @@
     <div class="header">
       <h1>Welcome to the Pizza Party!</h1>
     </div>
-    <h2>Pizza Size:</h2>
-    <form id="formOne">
-      <div class="form-group">
-        <select class="form-control" id="size">
-          <option value="sm">Small ($5)</option>
-          <option value="med">Medium ($10)</option>
-          <option value="lrg">Large($15)</option>
-          <option value="prty">X Large Party Pizza ($20)</option>
-        </select>
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Pizza Size:</h2>
+        <form id="formOne">
+          <div class="form-group">
+            <select class="form-control" id="size">
+              <option value="sm">Small ($5)</option>
+              <option value="med">Medium ($10)</option>
+              <option value="lrg">Large($15)</option>
+              <option value="prty">X Large Party Pizza ($20)</option>
+            </select>
+          </div>
+
+          <h2>Toppings ($1 per topping):</h2>
+          <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="topping" value="Olives">
+                Olives
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="checkbox" name="topping" value="Anchovies">
+                Anchovies
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="topping" value="Pickles">
+                Pickles
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="topping" value="peps">
+                Mama lils peppers
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="topping" value="artichokes">
+                Artichokes
+              </label>
+            </div>
+            <button type="submit" class="btn">Show me the price</button>
+          </div>
+        </form>
       </div>
 
-      <h2>Toppings ($1 per topping):</h2>
-      <div class="form-group">
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="topping" value="Olives">
-            Olives
-          </label>
+      <div class="col-md-6">
+        <div class="results">
+          <h2>Pizza Total:</h2>
+          <h1 id="finalTotal">$</h1>
         </div>
-        <div class="radio">
-          <label>
-            <input type="checkbox" name="topping" value="Anchovies">
-            Anchovies
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="topping" value="Pickles">
-            Pickles
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="topping" value="peps">
-            Mama lils peppers
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="topping" value="artichokes">
-            Artichokes
-          </label>
-        </div>
-        <button type="submit" class="btn">Show me the price</button>
       </div>
-    </form>
-
-    <div class="results">
-      <h2>Pizza Total:</h2>
-      <h1 id="finalTotal">$</h1>
     </div>
   </div>
 </body>

@@ -18,8 +18,8 @@ body {
 .results {
   border: solid black;
   border-radius: 50px;
-  border-width: 30px;
-  width: 50%;
+  border-width: 20px;
+  width: 90%;
   padding: 50px;
   margin-top: 50px;
 }
