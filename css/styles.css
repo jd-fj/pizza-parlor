@@ -15,6 +15,10 @@ body {
   width: 25%;
 }
 
+#zaOptions {
+  margin-top: 50px;
+}
+
 .results {
   border: solid black;
   border-radius: 50px;
